@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->string('name');
             $table->string('speciality');
-            $table->string('CRM');
+            $table->string('crm')->unique();
             $table->timestamps();
 
             $table->primary('id');
