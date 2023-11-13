@@ -15,6 +15,6 @@ class Doctor extends Model
     protected $fillable = [
         'name',
         'speciality',
-        'CRM'
+        'crm'
     ];
 }
