@@ -10,7 +10,7 @@ class Doctor extends Model
 {
     use HasFactory, HasUuids;
 
-    protected $table = 'doctor';
+    protected $table = 'doctors';
 
     protected $fillable = [
         'name',
