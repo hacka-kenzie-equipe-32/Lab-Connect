@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Doctor extends Model
+class ExaminationRequest extends Model
 {
     use HasFactory, HasUuids;
 
-    protected $table = 'doctors';
+    protected $table = 'examination_requests';
 
     protected $fillable = [
-        'name',
-        'speciality',
-        'crm'
+        'user_id',
+        'doctor_id',
     ];
 }
