@@ -11,7 +11,7 @@ class CreateScheduleService {
         $userFound = User::firstWhere('id', $data['userId']);
 
         if(is_null($userFound)) {
-            throw new AppError('user notexists', 400);
+            throw new AppError('user not exists', 400);
         }
         
         return Schedule::create($data);
