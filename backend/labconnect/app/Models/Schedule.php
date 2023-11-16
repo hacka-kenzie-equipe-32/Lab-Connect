@@ -28,5 +28,8 @@ class Schedule extends Model
 
     protected $casts = [
         'paid' => 'boolean', 
+        'userId' => 'uuid',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 }
