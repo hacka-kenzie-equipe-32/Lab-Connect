@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
@@ -58,6 +59,20 @@ class Handler extends ExceptionHandler
             ], 404);
         }
 
+        if($error instanceof ModelNotFoundException) {
+            $model = $error->getModel();
+            $modelName = class_basename($model);
+
+            $primaryKey = $error->getIds();
+
+            $message = "Não foi encontrado nenhum $modelName igual a '$primaryKey'.";
+
+            return response()->json([
+                'errors' => 'Route not found'
+            ], 404);
+        }
+
+        
         // Log::error('Internal', [$error]);
 
         return response()->json([
