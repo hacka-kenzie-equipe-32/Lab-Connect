@@ -22,11 +22,11 @@ class CreateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'require',
-            'email' => 'require|email',
-            'password' => 'require|min:8|regex:/[a-zA-Z#$%^&*]/i',
-            'birth_date' => 'require|date',
-            'cpf' => 'require|numeric',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8|regex:/[a-zA-Z#$%^&*]/i',
+            'birth_date' => 'required|date',
+            'cpf' => 'required|numeric',
             'isActive' => 'sometimes',
             'user_type' => 'sometimes'
         ];

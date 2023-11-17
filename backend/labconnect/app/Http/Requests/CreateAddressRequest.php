@@ -22,13 +22,13 @@ class CreateAddressRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'street' => 'require',
-            'number' => 'require|numeric',
-            'complement' => 'require',
-            'zip_code' => 'require',
-            'city' => 'require',
-            'state' => 'require',
-            'country' => 'require'
+            'street' => 'required',
+            'number' => 'required|numeric',
+            'complement' => 'required',
+            'zip_code' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'country' => 'required'
         ];
     }
 }
