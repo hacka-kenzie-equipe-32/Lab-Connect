@@ -11,10 +11,10 @@ class ListUserService {
     }
 
     public function findOne($id) {
-        $findUser = User::find($id);
+        $findUser = User::with('address')->find($id);
 
         if(is_null($findUser)) {
-            throw new AppError("User {$id} not found", 404);
+            throw new AppError("User not found", 404);
         }
 
         return $findUser;

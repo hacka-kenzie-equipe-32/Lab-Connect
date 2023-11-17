@@ -25,8 +25,8 @@ class User extends Model/** Authenticatable implements JWTSubject*/ {
         'password',
         'birth_date',
         'cpf',
-        'address',
-        'user_type'
+        'user_type',
+        'isActive'
     ];
 
     protected $hidden = [
@@ -37,6 +37,10 @@ class User extends Model/** Authenticatable implements JWTSubject*/ {
         'password' => 'hashed',
     ];
 
+    public function address()
+    {
+        return $this->hasOne(Address::class, 'user_id');
+    }
 
     public function getJWTIdentifier() {
         return $this->getKey();
