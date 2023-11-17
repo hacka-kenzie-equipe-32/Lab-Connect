@@ -25,8 +25,8 @@ class User extends Model/** Authenticatable implements JWTSubject*/ {
         'password',
         'birth_date',
         'cpf',
-        'address',
-        'user_type'
+        'user_type',
+        'isActive'
     ];
 
     protected $hidden = [
