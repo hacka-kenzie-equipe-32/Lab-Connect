@@ -50,4 +50,8 @@ class User extends Model/** Authenticatable implements JWTSubject*/ {
     public function getJWTCustomClaims() {
         return [];
     }
+
+    public function exams() {
+        return $this->hasMany(Exam::class);
+    }
 }
