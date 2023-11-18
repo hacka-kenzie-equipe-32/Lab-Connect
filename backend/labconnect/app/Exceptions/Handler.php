@@ -65,7 +65,7 @@ class Handler extends ExceptionHandler
 
             $primaryKey = $error->getIds();
 
-            $message = "Não foi encontrado nenhum $modelName igual a '$primaryKey'.";
+            $message = "No $modelName equal to '$primaryKey' was found.";
 
             return response()->json([
                 'errors' => 'Route not found'
