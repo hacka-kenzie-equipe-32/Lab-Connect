@@ -13,7 +13,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\Model;
 
 
-class User extends Model/** Authenticatable implements JWTSubject*/ {
+class User extends Authenticatable implements JWTSubject {
 
     use HasApiTokens, HasFactory, Notifiable, HasUuids;
 
