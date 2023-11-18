@@ -16,4 +16,8 @@ class ExaminationRequest extends Model
         'user_id',
         'doctor_id',
     ];
+
+    public function examinationResult() {
+        return $this->hasMany(ExaminationResult::class);
+    }
 }
