@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('cpf')->unique();
             $table->string('birth_date');
-            $table->string('user_type')->default('user');
+            $table->enum('user_type', ['user', 'employee', 'adm'])->default('user');
             $table->boolean('isActive')->default(true);
             $table->timestamps();
             
