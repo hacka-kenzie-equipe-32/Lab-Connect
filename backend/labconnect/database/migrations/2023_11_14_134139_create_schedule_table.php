@@ -12,12 +12,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('schedules', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('userId');
+            $table->uuid('id');
+            $table->uuid('user_id');
             $table->enum('status', ['created', 'analyzing', 'done', 'failure'])->default('created');
             $table->decimal('totalPrice');
             $table->boolean('paid')->default(false);
             $table->timestamps(); // created_at y updated_at
+
+        });
+
+        Schema::table('schedules', function (Blueprint $table) {
+
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
