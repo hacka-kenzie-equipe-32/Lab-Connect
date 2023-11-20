@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Services\Address\CreateAddressService;
 use App\Services\Address\UpdateAddressService;
 use App\Http\Requests\CreateAddressRequest;
+use App\Http\Requests\UpdateAddressRequest;
 
 class AddressController extends Controller {
     public function create(CreateAddressRequest $request) {
